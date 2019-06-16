@@ -1,15 +1,16 @@
 import AddSalariedEmployee from '../src/AddSalariedEmployee';
+// import PaymentClassification from '../src/PaymentClassification';
+// import PaymentSchedule from '../src/PaymentSchedule';
+// import PaymentMethod from '../src/PaymentMethod';
 import SalariedClassification from '../src/SalariedClassification';
-import PaymentClassification from '../src/PaymentClassification';
-import PaymentSchedule from '../src/PaymentSchedule';
 import MonthlySchedule from '../src/MonthlySchedule';
-import PaymentMethod from '../src/PaymentMethod';
 import HoldMethod from '../src/HoldMethod';
+import PayrollDataBase from '../src/PayrollDataBase';
 
 test( 'test add salaried employee', () => {
 
     let empid = 1;
-    let t = AddSalariedEmployee( empid, 'Bob', 'Home', 1000.00 );
+    let t = new AddSalariedEmployee( empid, 'Bob', 'Home', 1000.00 );
     t.execute();
 
     let e = PayrollDataBase.getEmployee( empid );
