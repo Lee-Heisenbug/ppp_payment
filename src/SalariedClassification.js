@@ -1,10 +1,14 @@
 class SalariedClassification {
 
-    constructor() {}
+    constructor( salary ) {
+
+        this.salary = salary;
+
+    }
 
     getSalary() {
 
-        return 1000.00;
+        return this.salary;
 
     }
 

@@ -1,34 +1,76 @@
-import SalariedClassification from './SalariedClassification'
-import MonthlySchedule from './MonthlySchedule';
-import HoldMethod from './HoldMethod';
+import PaymentClassification from './PaymentClassification';
+import PaymentSchedule from './PaymentSchedule';
+import PaymentMethod from './PaymentMethod';
 
 class Employee {
 
-    constructor() {
+    /**
+     * @param { number } empid 
+     * @param { string } name 
+     * @param { string } addr 
+     */
+    constructor( empid, name, addr ) {
+
+       this.empid = empid;
+       this.name = name;
+       this.addr = addr;
+       /**@type { PaymentClassification } */
+       this.pc;
+       /**@type { PaymentSchedule } */
+       this.ps;
+       /**@type { PaymentMethod } */
+       this.pm;
 
     }
 
     getName() {
 
-        return 'Bob';
+        return this.name;
+
+    }
+
+    /**
+     * @param { PaymentClassification } pc 
+     */
+    setClassification( pc ) {
+
+        this.pc = pc;
 
     }
 
     getClassification() {
 
-        return new SalariedClassification();
+        return this.pc;
+
+    }
+
+    /**
+     * @param { PaymentSchedule } ps 
+     */
+    setSchedule( ps ) {
+
+        this.ps = ps;
 
     }
 
     getSchedule() {
 
-        return new MonthlySchedule();
+        return this.ps;
+
+    }
+
+    /**
+     * @param { PaymentMethod } pm 
+     */
+    setMethod( pm ) {
+
+        this.pm = pm;
 
     }
 
     getMethod() {
 
-        return new HoldMethod();
+        return this.pm;
 
     }
 

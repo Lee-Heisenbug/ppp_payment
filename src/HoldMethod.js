@@ -1,6 +1,12 @@
-class HoldMethod {
+import PaymentMethod from './PaymentMethod';
 
-    constructor() {}
+class HoldMethod extends PaymentMethod {
+
+    constructor() {
+
+        super();
+
+    }
 
 }
 

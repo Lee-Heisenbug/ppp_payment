@@ -1,4 +1,6 @@
 import AddEmployeeTransaction from './AddEmployeeTransaction';
+import SalariedClassification from '../src/SalariedClassification';
+import MonthlySchedule from '../src/MonthlySchedule';
 
 class AddSalariedEmployee extends AddEmployeeTransaction {
 
@@ -11,6 +13,19 @@ class AddSalariedEmployee extends AddEmployeeTransaction {
     constructor( empid, name, addr, salary ) {
 
         super( empid, name, addr );
+        this.salary = salary;
+
+    }
+
+    getClassification() {
+
+        return new SalariedClassification( this.salary );
+
+    }
+
+    getSchedule() {
+
+        return new MonthlySchedule();
 
     }
 

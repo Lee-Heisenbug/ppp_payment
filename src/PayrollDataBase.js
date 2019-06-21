@@ -2,12 +2,33 @@ import Employee from './Employee';
 
 class PayrollDataBase {
 
-    getEmployee() {
+    constructor() {
 
-        return new Employee();
+        this.employees = new Map();
+
+    }
+
+    /**
+     * @param { number } empid
+     * @param { Employee } e 
+     */
+    addEmployee( empid, e ) {
+
+        this.employees.set( empid, e );
+
+    }
+
+    /**
+     * @param { number } empid 
+     */
+    getEmployee( empid ) {
+
+        return this.employees.get( empid );
 
     }
 
 }
 
-export default new PayrollDataBase();
+let GpayrollDataBase = new PayrollDataBase();
+
+export default GpayrollDataBase;
