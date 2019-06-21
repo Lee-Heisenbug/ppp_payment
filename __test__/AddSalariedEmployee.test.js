@@ -1,7 +1,7 @@
 import AddSalariedEmployee from '../src/AddSalariedEmployee';
-// import PaymentClassification from '../src/PaymentClassification';
-// import PaymentSchedule from '../src/PaymentSchedule';
-// import PaymentMethod from '../src/PaymentMethod';
+import PaymentClassification from '../src/PaymentClassification';
+import PaymentSchedule from '../src/PaymentSchedule';
+import PaymentMethod from '../src/PaymentMethod';
 import SalariedClassification from '../src/SalariedClassification';
 import MonthlySchedule from '../src/MonthlySchedule';
 import HoldMethod from '../src/HoldMethod';
