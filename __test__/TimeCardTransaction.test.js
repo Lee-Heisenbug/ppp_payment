@@ -1,5 +1,5 @@
 import TimeCardTransaction from '../src/TimeCardTransaction';
-import AddHourlyEmployee from '../src/AddCommissionedEmployee';
+import AddHourlyEmployee from '../src/AddHourlyEmployee';
 import PayrollDataBase from '../src/PayrollDataBase';
 import HourlyClassification from '../src/HourlyClassification';
 import TimeCard from '../src/TimeCard';
