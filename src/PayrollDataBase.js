@@ -4,6 +4,7 @@ class PayrollDataBase {
 
     constructor() {
 
+        /**@type { Map< number, Employee > } */
         this.employees = new Map();
 
     }
