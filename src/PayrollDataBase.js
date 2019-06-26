@@ -23,9 +23,18 @@ class PayrollDataBase {
      */
     getEmployee( empid ) {
 
-        return this.employees.get( empid );
+        return this.employees.get( empid ) || 0;
 
     }
+
+    /**
+     * @param { number } empid 
+     */
+    deleteEmployee( empid ) {
+
+        this.employees.delete( empid );
+
+    } 
 
 }
 
