@@ -6,6 +6,8 @@ class PayrollDataBase {
 
         /**@type { Map< number, Employee > } */
         this.employees = new Map();
+        /**@type { Map< number, Employee > } */
+        this.unionMembers = new Map();
 
     }
 
@@ -35,7 +37,27 @@ class PayrollDataBase {
 
         this.employees.delete( empid );
 
-    } 
+    }
+
+    /**
+     * @param { number } memberId 
+     * @param { Employee } e 
+     */
+    addUnionMember( memberId, e ) {
+
+        this.unionMembers.set( memberId, e );
+
+    }
+
+    /**
+     * @param { number } memberId 
+     */
+    getUnionMember( memberId ) {
+
+        return this.unionMembers.get( memberId );
+
+    }
+
 
 }
 

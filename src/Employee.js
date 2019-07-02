@@ -1,6 +1,7 @@
 import PaymentClassification from './PaymentClassification';
 import PaymentSchedule from './PaymentSchedule';
 import PaymentMethod from './PaymentMethod';
+import UnionAffiliation from './UnionAffiliation';
 
 class Employee {
 
@@ -20,6 +21,8 @@ class Employee {
        this.ps;
        /**@type { PaymentMethod } */
        this.pm;
+       /**@type { UnionAffiliation } */
+       this.af;
 
     }
 
@@ -71,6 +74,21 @@ class Employee {
     getMethod() {
 
         return this.pm;
+
+    }
+
+    /**
+     * @param { UnionAffiliation } af 
+     */
+    setAffiliation( af ) {
+
+        this.af = af;
+
+    }
+
+    getAffiliation() {
+
+        return this.af;
 
     }
 
