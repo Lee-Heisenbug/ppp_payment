@@ -4,7 +4,7 @@ import PayrollDataBase from '../src/PayrollDataBase';
 import CommissionedClassification from '../src/CommissionedClassification';
 import SalesReceipt from '../src/SalesReceipt';
 
-test( 'able to add time card', () => {
+test( 'able to add sales receipt', () => {
 
     let empid = 4;
     let date = new Date( 2001, 11, 14 ).getMilliseconds;
