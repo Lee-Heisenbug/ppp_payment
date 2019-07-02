@@ -17,7 +17,7 @@ test( 'able to add service charge', () => {
     let af = new UnionAffiliation( memberId, 12.5 );
     e.setAffiliation( af );
 
-    PayrollDataBase.AddUnionMember( memberId, e );
+    PayrollDataBase.addUnionMember( memberId, e );
     let sct = new ServiceChargeTransaction( memberId, date, 12.95 );
     sct.execute();
     let sc = af.getServiceCharge( date );
