@@ -41,6 +41,21 @@ class Employee {
 
     }
 
+    getAddress() {
+
+        return this.addr;
+
+    }
+
+    /**
+     * @param { string } addr 
+     */
+    setAddress( addr ) {
+
+        this.addr = addr;
+
+    }
+
     /**
      * @param { PaymentClassification } pc 
      */
