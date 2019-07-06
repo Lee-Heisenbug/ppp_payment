@@ -33,6 +33,15 @@ class Employee {
     }
 
     /**
+     * @param { string } name 
+     */
+    setName( name ) {
+    
+        this.name = name;
+
+    }
+
+    /**
      * @param { PaymentClassification } pc 
      */
     setClassification( pc ) {
