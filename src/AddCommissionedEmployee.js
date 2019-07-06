@@ -2,7 +2,7 @@ import AddEmployeeTransaction from './AddEmployeeTransaction';
 import CommissionedClassification from './CommissionedClassification';
 import BiWeeklySchedule from './BiWeeklySchedule';
 
-class AddHourlyEmployee extends AddEmployeeTransaction {
+class AddCommissionedEmployee extends AddEmployeeTransaction {
 
     /**
      * @param { number } empid 
@@ -33,4 +33,4 @@ class AddHourlyEmployee extends AddEmployeeTransaction {
 
 }
 
-export default AddHourlyEmployee;
+export default AddCommissionedEmployee;
