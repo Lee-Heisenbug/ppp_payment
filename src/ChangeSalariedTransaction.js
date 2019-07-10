@@ -10,8 +10,7 @@ export default class ChangeSalariedTransaction extends ChangeClassificationTrans
      */
     constructor( empId, salary ) {
 
-        super();
-        this.empId = empId;
+        super( empId );
         this.salary = salary;
 
     }

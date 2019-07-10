@@ -5,9 +5,12 @@ import PaymentClassification from './PaymentClassification';
 
 export default class ChangeClassificationTransaction extends ChangeEmployeeTransaction {
 
-    constructor() {
+    /**
+     * @param { number } empId 
+     */
+    constructor( empId ) {
 
-        super();
+        super( empId );
 
     }
     /**

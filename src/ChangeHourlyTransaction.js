@@ -10,8 +10,7 @@ export default class ChangeHourlyTransaction extends ChangeClassificationTransac
      */
     constructor( empId, hourlyRate ) {
 
-        super();
-        this.empId = empId;
+        super( empId );
         this.hourlyRate = hourlyRate;
 
     }
