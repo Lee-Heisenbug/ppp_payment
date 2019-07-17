@@ -4,10 +4,12 @@ export default class UnionAffiliation {
 
     /**
      * @param { number } memberId 
+     * @param { number } dues
      */
-    constructor( memberId ) {
+    constructor( memberId, dues ) {
 
         this.memberId = memberId;
+        this.dues = dues;
         /**@type { Map< number, ServiceCharge > } */
         this.serviceCharges = new Map();
 
@@ -26,6 +28,11 @@ export default class UnionAffiliation {
 
         this.serviceCharges.set( sc.getDate(), sc );
 
+    }
+    getDues() {
+
+        return this.dues;
+        
     }
 
 }
