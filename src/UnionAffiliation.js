@@ -1,6 +1,7 @@
 import ServiceCharge from './ServiceCharge';
+import Affiliation from './Affiliation';
 
-export default class UnionAffiliation {
+export default class UnionAffiliation extends Affiliation {
 
     /**
      * @param { number } memberId 
@@ -8,6 +9,7 @@ export default class UnionAffiliation {
      */
     constructor( memberId, dues ) {
 
+        super();
         this.memberId = memberId;
         this.dues = dues;
         /**@type { Map< number, ServiceCharge > } */
@@ -33,6 +35,11 @@ export default class UnionAffiliation {
 
         return this.dues;
         
+    }
+    getMemberId() {
+
+        return this.memberId;
+
     }
 
 }

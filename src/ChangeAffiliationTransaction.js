@@ -13,10 +13,12 @@ export default class ChangeAffiliationTransaction extends ChangeEmployeeTransact
      */
     change( e ) {
 
-        e.setAffiliation( this.getAffiliation() );
         this.recordMembership( e );
+        e.setAffiliation( this.getAffiliation() );
 
     }
+    /**@type { Affiliation } */
+    getAffiliation() {}
     /**
      * @virtual
      * @param { Employee } e

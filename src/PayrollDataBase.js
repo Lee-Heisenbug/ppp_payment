@@ -58,6 +58,15 @@ class PayrollDataBase {
 
     }
 
+    /**
+     * @param { number } memberId 
+     */
+    removeUnionMember( memberId ) {
+
+        this.unionMembers.delete( memberId );
+
+    }
+
 
 }
 
