@@ -1,1 +1,8 @@
-export default class PaymentSchedule {}
+export default class PaymentSchedule {
+
+    constructor() {}
+
+    /**@virtual */
+    isPayday() {}
+
+}

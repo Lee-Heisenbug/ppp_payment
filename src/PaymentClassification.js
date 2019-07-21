@@ -1,1 +1,7 @@
-export default class PaymentClassification {}
+export default class PaymentClassification {
+
+    constructor() {}
+    /**@virtual */
+    calculatePay() {}
+    
+}

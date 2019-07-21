@@ -41,5 +41,6 @@ export default class UnionAffiliation extends Affiliation {
         return this.memberId;
 
     }
+    calculateDeductions() {}
 
 }

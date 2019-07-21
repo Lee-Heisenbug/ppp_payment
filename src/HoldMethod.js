@@ -1,4 +1,5 @@
 import PaymentMethod from './PaymentMethod';
+import PayCheck from './PayCheck';
 
 class HoldMethod extends PaymentMethod {
 

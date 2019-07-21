@@ -67,6 +67,20 @@ class PayrollDataBase {
 
     }
 
+    /**@returns { number[] } */
+    getAllEmployeeIds() {
+
+        let empIds = [];
+        for( let empId of this.employees.keys() ) {
+
+            empIds.push( empId );
+
+        }
+        
+        return empIds;
+
+    }
+
 
 }
 

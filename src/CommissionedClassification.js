@@ -1,8 +1,11 @@
 import SalesReceipt from './SalesReceipt';
+import PaymentClassification from './PaymentClassification';
 
-class CommissionedClassification {
+class CommissionedClassification extends PaymentClassification {
 
     constructor( salary, commissionRate ) {
+
+        super();
 
         this.salary = salary;
         this.commissionRate = commissionRate;

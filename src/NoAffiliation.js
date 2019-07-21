@@ -7,5 +7,10 @@ export default class NoAffiliation extends Affiliation {
         super();
         
     }
+    calculateDeductions() {
+
+        return 0;
+
+    }
 
 }

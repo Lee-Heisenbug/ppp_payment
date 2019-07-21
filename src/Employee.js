@@ -1,7 +1,9 @@
 import PaymentClassification from './PaymentClassification';
 import PaymentSchedule from './PaymentSchedule';
 import PaymentMethod from './PaymentMethod';
-import UnionAffiliation from './UnionAffiliation';
+import Affiliation from './Affiliation';
+import NoAffiliation from './NoAffiliation';
+import PayCheck from './PayCheck';
 
 class Employee {
 
@@ -16,13 +18,13 @@ class Employee {
        this.name = name;
        this.addr = addr;
        /**@type { PaymentClassification } */
-       this.pc;
+       this.classification;
        /**@type { PaymentSchedule } */
-       this.ps;
+       this.paymentSchedule;
        /**@type { PaymentMethod } */
-       this.pm;
-       /**@type { UnionAffiliation } */
-       this.af;
+       this.paymentMethod;
+       /**@type { Affiliation } */
+       this.affiliation = new NoAffiliation();
 
     }
 
@@ -61,13 +63,13 @@ class Employee {
      */
     setClassification( pc ) {
 
-        this.pc = pc;
+        this.classification = pc;
 
     }
 
     getClassification() {
 
-        return this.pc;
+        return this.classification;
 
     }
 
@@ -76,13 +78,13 @@ class Employee {
      */
     setSchedule( ps ) {
 
-        this.ps = ps;
+        this.paymentSchedule = ps;
 
     }
 
     getSchedule() {
 
-        return this.ps;
+        return this.paymentSchedule;
 
     }
 
@@ -91,13 +93,13 @@ class Employee {
      */
     setMethod( pm ) {
 
-        this.pm = pm;
+        this.paymentMethod = pm;
 
     }
 
     getMethod() {
 
-        return this.pm;
+        return this.paymentMethod;
 
     }
 
@@ -106,13 +108,45 @@ class Employee {
      */
     setAffiliation( af ) {
 
-        this.af = af;
+        this.affiliation = af;
 
     }
 
     getAffiliation() {
 
-        return this.af;
+        return this.affiliation;
+
+    }
+
+    getEmployeeId() {
+
+        return this.empid;
+
+    }
+
+    /**
+     * @param { PayCheck } pc 
+     */
+    payDay( pc ) {
+
+        let grossPay = this.classification.calculatePay( pc );
+        let deductions = this.affiliation.calculateDeductions( pc );
+        let netPay = grossPay - deductions;
+
+        pc.setGrossPay( grossPay );
+        pc.setDeductions( deductions );
+        pc.setNetPay( netPay );
+
+        this.paymentMethod.pay( pc );
+
+    }
+
+    /**
+     * @param { number } date 
+     */
+    isPayDate( date ) {
+
+        return this.paymentSchedule.isPayday( date );
 
     }
 

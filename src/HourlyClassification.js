@@ -1,8 +1,11 @@
 import TimeCard from '../src/TimeCard';
+import PaymentClassification from './PaymentClassification';
 
-class HourlyClassification {
+class HourlyClassification extends PaymentClassification {
 
     constructor( hourlyRate ) {
+
+        super();
 
         this.hourlyRate = hourlyRate;
 
