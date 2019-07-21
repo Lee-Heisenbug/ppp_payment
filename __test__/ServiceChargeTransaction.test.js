@@ -7,7 +7,7 @@ test( 'able to add service charge', () => {
 
     let empId = 2;
     let memberId = 86;
-    let date = new Date( 2001, 11, 1 ).getMilliseconds();
+    let date = new Date( 2001, 11, 1 ).getTime();
 
     let t = new AddHourlyEmployee( empId, 'Bill', 'Home', 15.25 );
     t.execute();

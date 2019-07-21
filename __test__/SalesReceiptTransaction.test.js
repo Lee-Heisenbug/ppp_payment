@@ -7,7 +7,7 @@ import SalesReceipt from '../src/SalesReceipt';
 test( 'able to add sales receipt', () => {
 
     let empid = 4;
-    let date = new Date( 2001, 11, 14 ).getMilliseconds();
+    let date = new Date( 2001, 11, 14 ).getTime();
     let amount = 500;
     let t = new AddCommissionedEmployee( empid, 'Kane', 'Kane\'s Home', 1000.00, 20.00 );
     t.execute();

@@ -7,7 +7,7 @@ import TimeCard from '../src/TimeCard';
 test( 'able to add time card', () => {
 
     let empid = 2;
-    let date = new Date( 2001, 10, 31 ).getMilliseconds();
+    let date = new Date( 2001, 10, 31 ).getTime();
     let hours = 8.0;
     let t = new AddHourlyEmployee( empid, 'Bill', 'Home', 15.25 );
     t.execute();
