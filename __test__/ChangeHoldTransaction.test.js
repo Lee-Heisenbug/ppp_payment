@@ -10,7 +10,7 @@ test( 'able to change a employee\'s payment classification to salaried classific
     t.execute();
 
     let address = 'Home';
-    let cht = new ChangeHoldTransaction( address );
+    let cht = new ChangeHoldTransaction( empId, address );
     cht.execute();
 
     let e = PayrollDataBase.getEmployee( empId );
