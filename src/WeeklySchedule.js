@@ -7,5 +7,10 @@ export default class WeeklySchedule extends PaymentSchedule {
         super();
 
     }
+    isPayday() {
+
+        return true;
+        
+    }
 
 }

@@ -35,6 +35,12 @@ class HourlyClassification extends PaymentClassification {
 
     }
 
+    calculatePay() {
+
+        return 0;
+
+    }
+
 }
 
 export default HourlyClassification;

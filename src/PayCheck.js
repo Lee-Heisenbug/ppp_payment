@@ -54,5 +54,10 @@ export default class PayCheck {
         return 'Hold';
 
     }
+    getPayPeriodEndDate() {
+
+        return this.payDate;
+        
+    }
 
 }
