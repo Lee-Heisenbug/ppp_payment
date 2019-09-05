@@ -7,10 +7,12 @@ export default class WeeklySchedule extends PaymentSchedule {
         super();
 
     }
-    isPayday() {
+    isPayday( date ) {
 
-        return true;
+        let day = new Date( date ).getDay();
         
+        return day === 5;
+
     }
 
 }

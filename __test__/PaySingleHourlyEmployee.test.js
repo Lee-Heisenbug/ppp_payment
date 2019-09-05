@@ -17,7 +17,7 @@ describe( 'able to pay hourly employee', () => {
 
     test( 'paying with no time cards', () => {
     
-        let payDate = new Date( 2001, 11, 9 ).getTime();
+        let payDate = new Date( 2001, 10, 9 ).getTime();
         let pt = new PaydayTransaction( payDate );
         pt.execute();
     
@@ -27,7 +27,7 @@ describe( 'able to pay hourly employee', () => {
 
     test( 'paying with one time card', () => {
 
-        let payDate = new Date( 2001, 11, 9 ).getTime();
+        let payDate = new Date( 2001, 10, 9 ).getTime();
         
         let tc = new TimeCardTransaction( payDate, 2.0, empId );
         tc.execute();
@@ -40,7 +40,7 @@ describe( 'able to pay hourly employee', () => {
 
     test( 'paying over time with one time card', () => {
 
-        let payDate = new Date( 2001, 11, 9 ).getTime();
+        let payDate = new Date( 2001, 10, 9 ).getTime();
 
         let tc = new TimeCardTransaction( payDate, 9.0, empId );
         tc.execute();
@@ -49,6 +49,21 @@ describe( 'able to pay hourly employee', () => {
         pt.execute();
 
         validatePayCheck( pt, empId, payDate, ( 8 + 1.5 ) * 15.25 );
+
+    } )
+
+    test( 'paying on wrong date', () => {
+
+        let payDate = new Date( 2001, 10, 8 );
+
+        let tc = new TimeCardTransaction( payDate, 9.0, empId );
+        tc.execute();
+
+        let pt = new PaydayTransaction( payDate );
+        pt.execute();
+
+        let pc = pt.getPayCheck( empId );
+        expect( pc ).toBe( 0 );
 
     } )
 
@@ -63,7 +78,7 @@ describe( 'able to pay hourly employee', () => {
 function validatePayCheck( pt, empId, payDate, pay ) {
 
     let pc = pt.getPayCheck( empId );
-    expect( pc ).not.toBe( null );
+    expect( pc ).not.toBe( 0 );
     expect( pc.getPayPeriodEndDate() ).toBe( payDate );
     expect( pc.getGrossPay() ).toBe( pay );
     expect( pc.getField( 'Disposition' ) ).toBe( 'Hold' );
