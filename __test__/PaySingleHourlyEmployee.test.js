@@ -67,6 +67,22 @@ describe( 'able to pay hourly employee', () => {
 
     } )
 
+    test( 'paying with two time cards', () => {
+
+        let payDate = new Date( 2001, 10, 9 ).getTime();
+
+        let tc1 = new TimeCardTransaction( payDate, 2.0, empId );
+        tc1.execute();
+        let tc2 = new TimeCardTransaction( new Date( 2001, 10, 8 ).getTime(), 5.0, empId );
+        tc2.execute();
+
+        let pt = new PaydayTransaction( payDate );
+        pt.execute();
+
+        validatePayCheck( pt, empId, payDate, 7.0 * 15.25 );
+
+    } )
+
 } )
 
 /**
