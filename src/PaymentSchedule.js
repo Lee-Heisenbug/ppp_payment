@@ -2,7 +2,10 @@ export default class PaymentSchedule {
 
     constructor() {}
 
-    /**@virtual */
-    isPayday() {}
+    /**
+     * @virtual
+     * @param { number } date
+     */
+    isPayday( date ) {}
 
 }
