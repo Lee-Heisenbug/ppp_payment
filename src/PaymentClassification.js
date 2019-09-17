@@ -1,7 +1,12 @@
+import PayCheck from './PayCheck';
+
 export default class PaymentClassification {
 
     constructor() {}
-    /**@virtual */
-    calculatePay() {}
+    /**
+     * @virtual
+     * @param { PayCheck } pc
+     */
+    calculatePay( pc ) {}
     
 }

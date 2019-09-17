@@ -129,7 +129,7 @@ class Employee {
      */
     payDay( pc ) {
 
-        let grossPay = this.classification.calculatePay();
+        let grossPay = this.classification.calculatePay( pc );
         let deductions = this.affiliation.calculateDeductions();
         let netPay = grossPay - deductions;
 

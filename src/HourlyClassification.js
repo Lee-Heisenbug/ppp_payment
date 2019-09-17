@@ -1,5 +1,6 @@
 import TimeCard from '../src/TimeCard';
 import PaymentClassification from './PaymentClassification';
+import PayCheck from './PayCheck';
 
 class HourlyClassification extends PaymentClassification {
 
@@ -37,19 +38,37 @@ class HourlyClassification extends PaymentClassification {
         return this.timeCards.get( date );
 
     }
+    /**
+     * @param { PayCheck } pc 
+     */
+    calculatePay( pc ) {
 
-    calculatePay() {
-
-        let pay = 0;
+        let totalPay = 0;
+        let payPeriod = pc.getPayDate();
         let self = this;
 
         this.timeCards.forEach( tc => {
 
-            pay += self._calculateDayPay( tc );
+            if( this._isInPayPeriod( tc, payPeriod ) )
+                totalPay += self._calculateDayPay( tc );
 
         } )
 
-        return pay;
+        return totalPay;
+
+    }
+    /**
+     * @param { TimeCard } tc 
+     * @param { number } payPeriod
+     */
+    _isInPayPeriod( tc, payPeriod ) {
+
+        let payPeriodEndDate = new Date( payPeriod ).getDate();
+        let payPeriodStartDate = payPeriodEndDate - 5;
+        let timeCardDate = new Date( tc.getDate() ).getDate();
+
+        return ( timeCardDate >= payPeriodStartDate ) &&
+            ( timeCardDate <= payPeriodEndDate );
 
     }
     /**

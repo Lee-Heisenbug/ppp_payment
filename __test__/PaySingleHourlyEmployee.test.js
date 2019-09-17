@@ -83,6 +83,23 @@ describe( 'able to pay hourly employee', () => {
 
     } )
 
+    test( 'paying with timecards spanning two pay periods', () => {
+
+        let payDate = new Date( 2001, 10, 9 ).getTime();
+        let dateInPerviousPayPeriod = new Date( 2001, 10, 2 ).getTime();
+
+        let tc = new TimeCardTransaction( payDate, 2.0, empId );
+        tc.execute();
+        let tc2 = new TimeCardTransaction( dateInPerviousPayPeriod, 5.0, empId );
+        tc2.execute();
+
+        let pt = new PaydayTransaction( payDate );
+        pt.execute();
+        validatePayCheck( pt, empId, payDate, 2.0 * 15.25 );
+
+
+    } )
+
 } )
 
 /**
